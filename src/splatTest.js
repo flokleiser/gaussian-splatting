@@ -56,14 +56,4 @@ function frameLoop() {
 }
 
 
-function catSplat() {
-	if (splatSource = 'https://lumalabs.ai/capture/d80d4876-cf71-4b8a-8b5b-49ffac44cd4a') {
-		splatSource =  "https://lumalabs.ai/embed/dda54514-b5b8-4675-8d4c-a2590acbe399"
-	}
-}
-
-function demoSplat() {
-	splatSource = 'https://lumalabs.ai/capture/d80d4876-cf71-4b8a-8b5b-49ffac44cd4a'
-}
-
 renderer.setAnimationLoop(frameLoop);

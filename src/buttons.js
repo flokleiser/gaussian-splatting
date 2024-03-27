@@ -1,20 +1,19 @@
-let demoSplatButton = document.createElement('buttonBig');
+
+var demoSplatButton = document.createElement('buttonBig');
 demoSplatButton.textContent= "Demo"
 demoSplatButton.onclick = function() {
 	console.log('Demo');
-	demoSplat();
+	// demoSplat();
 }
 document.body.appendChild(demoSplatButton);
 
-let catSplatButton= document.createElement('buttonBig');
+var catSplatButton= document.createElement('buttonBig');
 catSplatButton.textContent= "Cat"
 catSplatButton.onclick = function() {
 	console.log('Cat');
-	catSplat();
+	// catSplat();
 }
 document.body.appendChild(catSplatButton);
-
-
 
 var buttonRow= document.createElement('div');
 buttonRow.id = 'buttonDiv';
