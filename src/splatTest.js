@@ -1,7 +1,18 @@
 import { WebGLRenderer, PerspectiveCamera, Scene } from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
 import { LumaSplatsThree } from '@lumaai/luma-web';
+
+
+
+const splatArray = [
+	//demo
+	'https://lumalabs.ai/capture/d80d4876-cf71-4b8a-8b5b-49ffac44cd4a',
+
+	//cat
+	"https://lumalabs.ai/embed/dda54514-b5b8-4675-8d4c-a2590acbe399",
+
+]
+
 
 let renderer = new WebGLRenderer({ antialias: false });
 
@@ -39,5 +50,10 @@ function frameLoop() {
 
 	renderer.render(scene, camera);
 }
+
+
+// function splatSwitcher() {
+	// document.getElementById('buttonBig')
+// }
 
 renderer.setAnimationLoop(frameLoop);
