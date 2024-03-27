@@ -6,9 +6,9 @@ ___
 
 # References & Links
 
-Captures: [https://lumalabs.ai/dashboard/captures]
+Captures: https://lumalabs.ai/dashboard/captures
 
-References: [https://lumalabs.ai/luma-web-library]
+References: https://lumalabs.ai/luma-web-library
 
 ___
 
