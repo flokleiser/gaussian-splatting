@@ -11,7 +11,6 @@ renderer.domElement.style.height = '100%';
 
 document.body.appendChild(renderer.domElement);
 
-// let camera = new PerspectiveCamera(75, 1, 0.1, 1000);
 let camera = new PerspectiveCamera(75, 1, 0.1, 1000);
 camera.position.z = -2;
 
