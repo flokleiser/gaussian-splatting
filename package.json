@@ -1823,5 +1823,8 @@
         }
       }
     }
+  },
+  "dependencies": {
+    "@lumaai/luma-web": "^0.2.2"
   }
 }
