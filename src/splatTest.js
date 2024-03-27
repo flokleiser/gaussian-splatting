@@ -3,6 +3,8 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { LumaSplatsThree } from '@lumaai/luma-web';
 
 
+let splatSource = "https://lumalabs.ai/embed/dda54514-b5b8-4675-8d4c-a2590acbe399" ;
+
 
 const splatArray = [
 	//demo
@@ -31,7 +33,9 @@ controls.enableDamping = true;
 let scene = new Scene();
 
 let splat = new LumaSplatsThree({
-	source: "https://lumalabs.ai/embed/dda54514-b5b8-4675-8d4c-a2590acbe399"
+	// source: "https://lumalabs.ai/embed/dda54514-b5b8-4675-8d4c-a2590acbe399"
+	source: splatSource
+
 });
 scene.add(splat);
 
@@ -52,8 +56,14 @@ function frameLoop() {
 }
 
 
-// function splatSwitcher() {
-	// document.getElementById('buttonBig')
-// }
+function catSplat() {
+	if (splatSource = 'https://lumalabs.ai/capture/d80d4876-cf71-4b8a-8b5b-49ffac44cd4a') {
+		splatSource =  "https://lumalabs.ai/embed/dda54514-b5b8-4675-8d4c-a2590acbe399"
+	}
+}
+
+function demoSplat() {
+	splatSource = 'https://lumalabs.ai/capture/d80d4876-cf71-4b8a-8b5b-49ffac44cd4a'
+}
 
 renderer.setAnimationLoop(frameLoop);

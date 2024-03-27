@@ -1,7 +1,9 @@
 # Gaussian Splatting 
 
 Playing around with gaussian splatting, using luma.ai
+___
 
+### https://flokleiser.github.io/gaussianFlo/
 ___
 
 # References & Links
