@@ -22,9 +22,10 @@ ___
 
 # To-Do
 
+- [ ] Figure out how to <ins> EDIT </ins> splats
 - [ ] Buttons to switch splats
     - [x] Actual Buttons
-    - [ ] Figure out how to switch model
+    - [x] Figure out how to switch model
 - [ ] Figure out if i can put package-lock etc in seperate folder to clean up
 - [ ] figure out how to make splats less blurry
 - [ ] Figure out how to compile ts to js using webpack (?)

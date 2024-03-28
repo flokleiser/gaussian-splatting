@@ -26,9 +26,24 @@ buttonBig:hover {
     scale:1.1;  
 }
 
+#buttonRowDiv {
+  display:flex;
+  flex-direction: row;
+  position:absolute;
+}
 
-#buttonDiv {
-        display: flex; 
-        flex-direction: column;
-        position:absolute;
+#sceneButtonDiv {
+    display: flex; 
+    flex-direction: column;
+    position:absolute;
+    top: 70px;
+}
+
+#settingsButtonDiv {
+  display:flex;
+  flex-direction: column;
+  position:absolute;
+  left: 140px;
+  top: 70px;
+
 }

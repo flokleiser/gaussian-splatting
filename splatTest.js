@@ -2,7 +2,7 @@ import { WebGLRenderer, PerspectiveCamera, Scene } from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { LumaSplatsThree, LumaSplatsSemantics } from '@lumaai/luma-web';
 
-const splatArray = [
+const splatArray =[
 	//demo
 	'https://lumalabs.ai/capture/d80d4876-cf71-4b8a-8b5b-49ffac44cd4a',
 
@@ -77,30 +77,11 @@ window.toggleBackground = () => {
 	console.log(backgroundEnabled)
 
 	if (!backgroundEnabled) {
-
-		//background removal
-		let layersEnabled = {
-			Background: false,
-			Foreground: true,
-		}
-		function updateSemanticMask() {
-			splat.semanticsMask =
-				(layersEnabled.Background ? LumaSplatsSemantics.BACKGROUND : 0) |
-				(layersEnabled.Foreground ? LumaSplatsSemantics.FOREGROUND : 0);
-		}
-		updateSemanticMask();
+		splat.semanticsMask = LumaSplatsSemantics.FOREGROUND;
 	}
+
 	else if (backgroundEnabled) {
-		let layersEnabled = {
-			Background: true,
-			Foreground: true,
-		}
-		function updateSemanticMask() {
-			splat.semanticsMask =
-				(layersEnabled.Background ? LumaSplatsSemantics.BACKGROUND : 0) |
-				(layersEnabled.Foreground ? LumaSplatsSemantics.FOREGROUND : 0);
-		}
-		updateSemanticMask();
+		splat.semanticsMask = LumaSplatsSemantics.FOREGROUND | LumaSplatsSemantics.BACKGROUND;
 	}
 }
 
