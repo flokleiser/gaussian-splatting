@@ -8,14 +8,23 @@ ___
 
 # References & Links
 
-Captures: https://lumalabs.ai/dashboard/captures
+#### Captures: 
+https://lumalabs.ai/dashboard/captures
+https://poly.cam/captures
 
-References: https://lumalabs.ai/luma-web-library
+#### References
+LumaAI: https://lumalabs.ai/luma-web-library
+Polycam: https://learn.poly.cam 
+
+
 
 ___
 
 # To-Do
 
-- [ ] Figure out how to compile ts to js using webpack (?)
-- [ ] figure out how to make splats less blurry
 - [ ] Buttons to switch splats
+    - [x] Actual Buttons
+    - [ ] Figure out how to switch model
+- [ ] Figure out if i can put package-lock etc in seperate folder to clean up
+- [ ] figure out how to make splats less blurry
+- [ ] Figure out how to compile ts to js using webpack (?)
