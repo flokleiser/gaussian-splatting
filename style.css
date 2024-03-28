@@ -48,7 +48,11 @@ buttonBig:hover {
 
 }
 
-.statsClass{
-  left: 100%;
-  top: 0;
+#statsClass {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  opacity: 0.9;
+  z-index: 10000;;
 }

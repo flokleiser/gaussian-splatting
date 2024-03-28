@@ -2,13 +2,16 @@ var modelsHidden= true;
 var settingsHidden = true;
 
 var modelButton = document.createElement('buttonBig');
-modelButton.innerHTML= "Models";
+// modelButton.innerHTML= "Models";
+modelButton.innerHTML="<ins>Models</ins>" 
 modelButton.addEventListener('click', function handleModelClick() {
     if (modelsHidden) {
-        modelButton.innerHTML="<ins>Models</ins>" 
+        // modelButton.innerHTML="<ins>Models</ins>" 
+		modelButton.innerHTML= "Models"
     }
     if (!modelsHidden) {
-        modelButton.innerHTML= "Models"
+        // modelButton.innerHTML= "Models"
+		modelButton.innerHTML="<ins>Models</ins>" 
     }
 	});
 modelButton.onclick = function() {
@@ -17,13 +20,16 @@ modelButton.onclick = function() {
 document.body.appendChild(modelButton);
 
 var settingsButton= document.createElement('buttonBig');
-settingsButton.innerHTML= "Settings";
+// settingsButton.innerHTML= "Settings";
+settingsButton.innerHTML= "<ins>Settings</ins>"
 settingsButton.addEventListener('click', function handleSettingsClick() {
     if (settingsHidden) {
-        settingsButton.innerHTML= "<ins>Settings</ins>"
+		settingsButton.innerHTML= "Settings"
+        // settingsButton.innerHTML= "<ins>Settings</ins>"
     }
     if (!settingsHidden) {
-        settingsButton.innerHTML= "Settings"
+        // settingsButton.innerHTML= "Settings"
+		settingsButton.innerHTML= "<ins>Settings</ins>"
     }
 	});
 settingsButton.onclick = function() {
