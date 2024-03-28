@@ -12,6 +12,9 @@ const splatArray = [
 
 	//cat
 	"https://lumalabs.ai/embed/dda54514-b5b8-4675-8d4c-a2590acbe399",
+
+	//desk
+	"https://lumalabs.ai/embed/2c100df7-a93d-4893-9430-fbf9715e012d",
 ]
 
 let renderer = new WebGLRenderer({ antialias: false });
