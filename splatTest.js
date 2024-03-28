@@ -38,6 +38,40 @@ let splat = new LumaSplatsThree({
 });
 scene.add(splat);
 
+
+window.demoSplat= () => {
+	scene.remove(splat);
+	splat = new LumaSplatsThree({
+		source: splatArray[0],
+		enableThreeShaderIntegration:false
+	});
+	scene.add(splat)
+
+	camera.position.z = 7;
+}
+
+window.catSplat = () => {
+	scene.remove(splat);
+	splat = new LumaSplatsThree({
+		source: splatArray[1],
+		enableThreeShaderIntegration:false
+	});
+	scene.add(splat)
+
+	camera.position.z = -7;
+}
+
+window.deskSplat = () => {
+	scene.remove(splat);
+	splat = new LumaSplatsThree({
+		source: splatArray[2],
+		enableThreeShaderIntegration:false
+	});
+	scene.add(splat)
+
+	camera.position.z = 7;
+}
+
 window.toggleBackground = () => {
 	backgroundEnabled = !backgroundEnabled
 	console.log(backgroundEnabled)
@@ -69,8 +103,6 @@ window.toggleBackground = () => {
 		updateSemanticMask();
 	}
 }
-
-
 
 function frameLoop() {
 	let canvas = renderer.domElement;
