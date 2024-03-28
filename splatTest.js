@@ -1,6 +1,8 @@
 import { WebGLRenderer, PerspectiveCamera, Scene } from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { LumaSplatsThree, LumaSplatsSemantics } from '@lumaai/luma-web';
+import { Color, DoubleSide, Mesh, MeshStandardMaterial, PlaneGeometry, Texture, Vector3 } from "three";
+
 
 const splatArray =[
 	//demo
@@ -12,9 +14,10 @@ const splatArray =[
 	//desk
 	"https://lumalabs.ai/embed/2c100df7-a93d-4893-9430-fbf9715e012d",
 ]
-
 var backgroundEnabled = true;
 
+
+export default function splatTest() {}
 let renderer = new WebGLRenderer({ antialias: false });
 
 renderer.domElement.style.position = 'absolute';
@@ -31,12 +34,24 @@ controls.enableDamping = true;
 
 let scene = new Scene();
 
+// scene.background = new Color('black');
+
 let splat = new LumaSplatsThree({
 	source: splatArray[1],
-	enableThreeShaderIntegration: false
+	enableThreeShaderIntegration: false,
+	// particleRevealEnabled: true,
 
 });
+
+
 scene.add(splat);
+
+// splat.onInitialCameraTransform = transform => {
+// 	transform.decompose(camera.position, camera.quaternion, new Vector3());
+// };
+
+// scene.add(createText());
+
 
 
 window.demoSplat= () => {
@@ -103,3 +118,44 @@ function frameLoop() {
 
 
 renderer.setAnimationLoop(frameLoop);
+
+
+// function createText() {
+// 	const canvas = document.createElement('canvas');
+// 	const context = canvas.getContext('2d');
+// 	canvas.width = 1024;
+// 	canvas.height = 512;
+
+// 	context.fillStyle = 'rgba(255, 255, 255, 0)';
+// 	context.fillRect(0, 0, canvas.width, canvas.height);
+
+// 	context.fillStyle = 'white';
+// 	context.font = '200px sans-serif';
+// 	context.textAlign = 'center';
+// 	context.textBaseline = 'middle';
+// 	context.strokeStyle = 'rgba(0, 0, 0, 0.5)'
+// 	context.lineWidth = 5;
+// 	context.fillText('Hello World', canvas.width / 2, canvas.height / 2);
+// 	context.strokeText('Hello World', canvas.width / 2, canvas.height / 2);
+
+// 	const texture = new Texture(canvas);
+// 	texture.needsUpdate = true;
+
+// 	const geometry = new PlaneGeometry(5, 2.5);
+// 	const material = new MeshStandardMaterial({
+// 		map: texture,
+// 		transparent: false,
+// 		alphaTest: 0.5,
+// 		side: DoubleSide,
+// 		premultipliedAlpha: true,
+// 		emissive: 'white',
+// 		emissiveIntensity: 2,
+// 	});
+// 	const textPlane = new Mesh(geometry, material);
+
+// 	textPlane.position.set(-0.8, 0.9, -0.8);
+// 	textPlane.rotation.y = 2.8
+// 	textPlane.scale.setScalar(0.6);
+
+// 	return textPlane;
+// }
