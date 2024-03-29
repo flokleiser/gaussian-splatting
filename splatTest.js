@@ -11,8 +11,17 @@ const splatArray =[
 	//cat
 	"https://lumalabs.ai/embed/dda54514-b5b8-4675-8d4c-a2590acbe399",
 
+	//cat 2
+	"https://lumalabs.ai/embed/66bcf4a4-ddbd-4c53-9d89-93f39a943dba",
+
 	//desk
 	"https://lumalabs.ai/embed/2c100df7-a93d-4893-9430-fbf9715e012d",
+
+	//desk 2
+	"https://lumalabs.ai/embed/f3fa6a0c-de07-4f58-b395-f75f993c1d6f",
+
+	//desk 3
+	"https://lumalabs.ai/embed/2a7c971c-fb52-4aca-b7c3-117a9e1016a0",
 ]
 var backgroundEnabled = true;
 
@@ -76,10 +85,43 @@ window.catSplat = () => {
 	camera.position.z = -7;
 }
 
-window.deskSplat = () => {
+window.catSplat2 = () => {
 	scene.remove(splat);
 	splat = new LumaSplatsThree({
 		source: splatArray[2],
+		enableThreeShaderIntegration:false
+	});
+	scene.add(splat)
+
+	camera.position.z = 7;
+}
+
+window.deskSplat = () => {
+	scene.remove(splat);
+	splat = new LumaSplatsThree({
+		source: splatArray[3],
+		enableThreeShaderIntegration:false
+	});
+	scene.add(splat)
+
+	camera.position.z = 7;
+}
+
+window.deskSplat2 = () => {
+	scene.remove(splat);
+	splat = new LumaSplatsThree({
+		source: splatArray[4],
+		enableThreeShaderIntegration:false
+	});
+	scene.add(splat)
+
+	camera.position.z = -7;
+}
+
+window.deskSplat3 = () => {
+	scene.remove(splat);
+	splat = new LumaSplatsThree({
+		source: splatArray[5],
 		enableThreeShaderIntegration:false
 	});
 	scene.add(splat)
