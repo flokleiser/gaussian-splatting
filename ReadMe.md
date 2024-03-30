@@ -13,7 +13,7 @@ https://lumalabs.ai/dashboard/captures
 https://poly.cam/captures
 
 #### References
-LumaAI: https://lumalabs.ai/luma-web-library
+LumaAI: https://lumalabs.ai/luma-web-library <br>
 Polycam: https://learn.poly.cam 
 
 
