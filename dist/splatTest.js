@@ -1,7 +1,7 @@
 import { WebGLRenderer, PerspectiveCamera, Scene } from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { LumaSplatsThree, LumaSplatsSemantics } from '@lumaai/luma-web';
-import { Color, DoubleSide, Mesh, MeshStandardMaterial, PlaneGeometry, Texture, Vector3 } from "three";
 const splatArray = [
     //demo
     'https://lumalabs.ai/capture/d80d4876-cf71-4b8a-8b5b-49ffac44cd4a',
@@ -17,6 +17,7 @@ const splatArray = [
     "https://lumalabs.ai/embed/2a7c971c-fb52-4aca-b7c3-117a9e1016a0",
 ];
 var backgroundEnabled = true;
+console.log('compile');
 export default function splatTest() { }
 let renderer = new WebGLRenderer({ antialias: false });
 renderer.domElement.style.position = 'absolute';
@@ -39,7 +40,7 @@ scene.add(splat);
 // 	transform.decompose(camera.position, camera.quaternion, new Vector3());
 // };
 // scene.add(createText());
-window.demoSplat = () => {
+export function demoSplat() {
     scene.remove(splat);
     splat = new LumaSplatsThree({
         source: splatArray[0],
@@ -47,8 +48,8 @@ window.demoSplat = () => {
     });
     scene.add(splat);
     camera.position.z = 7;
-};
-window.catSplat = () => {
+}
+export function catSplat() {
     scene.remove(splat);
     splat = new LumaSplatsThree({
         source: splatArray[1],
@@ -56,8 +57,8 @@ window.catSplat = () => {
     });
     scene.add(splat);
     camera.position.z = -7;
-};
-window.catSplat2 = () => {
+}
+export function catSplat2() {
     scene.remove(splat);
     splat = new LumaSplatsThree({
         source: splatArray[2],
@@ -65,8 +66,8 @@ window.catSplat2 = () => {
     });
     scene.add(splat);
     camera.position.z = 7;
-};
-window.deskSplat = () => {
+}
+export function deskSplat() {
     scene.remove(splat);
     splat = new LumaSplatsThree({
         source: splatArray[3],
@@ -74,8 +75,8 @@ window.deskSplat = () => {
     });
     scene.add(splat);
     camera.position.z = 7;
-};
-window.deskSplat2 = () => {
+}
+export function deskSplat2() {
     scene.remove(splat);
     splat = new LumaSplatsThree({
         source: splatArray[4],
@@ -83,8 +84,8 @@ window.deskSplat2 = () => {
     });
     scene.add(splat);
     camera.position.z = -7;
-};
-window.deskSplat3 = () => {
+}
+export function deskSplat3() {
     scene.remove(splat);
     splat = new LumaSplatsThree({
         source: splatArray[5],
@@ -92,8 +93,8 @@ window.deskSplat3 = () => {
     });
     scene.add(splat);
     camera.position.z = 7;
-};
-window.toggleBackground = () => {
+}
+export function toggleBackground() {
     backgroundEnabled = !backgroundEnabled;
     console.log(backgroundEnabled);
     if (!backgroundEnabled) {
@@ -102,7 +103,7 @@ window.toggleBackground = () => {
     else if (backgroundEnabled) {
         splat.semanticsMask = LumaSplatsSemantics.FOREGROUND | LumaSplatsSemantics.BACKGROUND;
     }
-};
+}
 function frameLoop() {
     let canvas = renderer.domElement;
     let width = canvas.clientWidth;

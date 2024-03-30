@@ -38,6 +38,8 @@ const splatArray =[
 ]
 var backgroundEnabled = true;
 
+console.log('compile')
+
 
 export default function splatTest() {}
 let renderer = new WebGLRenderer({ antialias: false });

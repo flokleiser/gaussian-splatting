@@ -1,4 +1,4 @@
-"use strict";
+import { demoSplat, catSplat, catSplat2, deskSplat, deskSplat2, deskSplat3, toggleBackground } from "./splatTest";
 var modelsHidden = true;
 var settingsHidden = true;
 var modelButton = document.createElement('buttonBig');

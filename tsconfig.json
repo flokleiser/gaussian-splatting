@@ -10,6 +10,7 @@
       "allowJs": true,
       "strict": true,
       "skipLibCheck": true,
-      // "noEmit": true,
-    }
+      // "watch" : true
+    },
+    "compileOnSave": true
   }
