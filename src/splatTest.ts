@@ -1,8 +1,21 @@
 import { WebGLRenderer, PerspectiveCamera, Scene } from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { LumaSplatsThree, LumaSplatsSemantics } from '@lumaai/luma-web';
 import { Color, DoubleSide, Mesh, MeshStandardMaterial, PlaneGeometry, Texture, Vector3 } from "three";
 
+
+declare global {
+    interface Window {
+        demoSplat() : any
+        catSplat() : any
+        catSplat2() : any
+        deskSplat() : any
+        deskSplat2() : any
+        deskSplat3() : any
+        toggleBackground() : any
+    }
+}
 
 const splatArray =[
 	//demo
@@ -62,8 +75,7 @@ scene.add(splat);
 // scene.add(createText());
 
 
-
-window.demoSplat= () => {
+export function demoSplat() {
 	scene.remove(splat);
 	splat = new LumaSplatsThree({
 		source: splatArray[0],
@@ -74,7 +86,7 @@ window.demoSplat= () => {
 	camera.position.z = 7;
 }
 
-window.catSplat = () => {
+export function catSplat() {
 	scene.remove(splat);
 	splat = new LumaSplatsThree({
 		source: splatArray[1],
@@ -85,7 +97,7 @@ window.catSplat = () => {
 	camera.position.z = -7;
 }
 
-window.catSplat2 = () => {
+export function catSplat2() { 
 	scene.remove(splat);
 	splat = new LumaSplatsThree({
 		source: splatArray[2],
@@ -96,7 +108,7 @@ window.catSplat2 = () => {
 	camera.position.z = 7;
 }
 
-window.deskSplat = () => {
+export function deskSplat() {
 	scene.remove(splat);
 	splat = new LumaSplatsThree({
 		source: splatArray[3],
@@ -107,7 +119,7 @@ window.deskSplat = () => {
 	camera.position.z = 7;
 }
 
-window.deskSplat2 = () => {
+export function deskSplat2() {
 	scene.remove(splat);
 	splat = new LumaSplatsThree({
 		source: splatArray[4],
@@ -118,7 +130,7 @@ window.deskSplat2 = () => {
 	camera.position.z = -7;
 }
 
-window.deskSplat3 = () => {
+export function deskSplat3() {
 	scene.remove(splat);
 	splat = new LumaSplatsThree({
 		source: splatArray[5],
@@ -129,7 +141,7 @@ window.deskSplat3 = () => {
 	camera.position.z = 7;
 }
 
-window.toggleBackground = () => {
+export function toggleBackground() {
 	backgroundEnabled = !backgroundEnabled
 	console.log(backgroundEnabled)
 
