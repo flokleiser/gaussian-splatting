@@ -1,6 +1,6 @@
 # Gaussian Splatting 
 
-Playing around with gaussian splatting, using luma.ai
+Playing around with gaussian splatting, using luma.ai and polycam.
 ___
 
 ### https://flokleiser.github.io/gaussianFlo/
