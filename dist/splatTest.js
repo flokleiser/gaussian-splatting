@@ -1,6 +1,6 @@
 import { WebGLRenderer, PerspectiveCamera, Scene } from 'three';
-// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { LumaSplatsThree, LumaSplatsSemantics } from '@lumaai/luma-web';
 const splatArray = [
     //demo
