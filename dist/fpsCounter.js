@@ -1,5 +1,5 @@
-// import Stats from 'three/addons/libs/stats.module.js';
-import Stats from 'three/examples/jsm/libs/stats.module';
+import Stats from 'three/addons/libs/stats.module.js';
+// import Stats from 'three/examples/jsm/libs/stats.module';
 const stats = new Stats();
 stats.showPanel(0);
 // stats.
