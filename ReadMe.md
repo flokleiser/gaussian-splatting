@@ -22,6 +22,9 @@ ___
 
 # To-Do
 
+
+- [ ] .ply loader: https://sbcode.net/threejs/loaders-ply/
+
 - [ ] Figure out how to <ins> EDIT </ins> splats
 - [ ] Figure out if i can put package-lock etc in seperate folder to clean up
 - [ ] figure out how to make splats less blurry
