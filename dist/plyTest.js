@@ -4,6 +4,8 @@ import Stats from 'three/addons/libs/stats.module.js';
 
 import { PLYLoader } from 'three/addons/loaders/PLYLoader.js';
 
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { OrbitControls } from 'OrbitControls'
 
 let container, stats;
 
@@ -17,7 +19,7 @@ function init() {
     container = document.createElement( 'div' );
     document.body.appendChild( container );
 
-    camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 1, 15 );
+    camera = new THREE.PerspectiveCamera( 35, window.innerWidth / window.innerHeight, 0.1, 15 );
     camera.position.set( 3, 0.15, 3 );
 
     cameraTarget = new THREE.Vector3( 0, - 0.1, 0 );
@@ -43,36 +45,21 @@ function init() {
     // PLY file
 
     const loader = new PLYLoader();
-    loader.load( './models/ply/ascii/dolphins.ply', function ( geometry ) {
+    loader.load( './splats/catsplat-trim.ply', function ( geometry ) {
 
         geometry.computeVertexNormals();
 
-        const material = new THREE.MeshStandardMaterial( { color: 0x009cff, flatShading: true } );
-        const mesh = new THREE.Mesh( geometry, material );
+        const material = new THREE.PointsMaterial( { size: 0.01, vertexColors: true } );
+        const mesh = new THREE.Points( geometry, material );
 
-        mesh.position.y = - 0.2;
-        mesh.position.z = 0.3;
+        // mesh.position.y = - 0.2;
+        // mesh.position.z = 0.3;
+        // mesh.rotation.x = - Math.PI / 2;
+
+        mesh.position.y = 0;
+        mesh.position.z = 0;
         mesh.rotation.x = - Math.PI / 2;
-        mesh.scale.multiplyScalar( 0.001 );
-
-        mesh.castShadow = true;
-        mesh.receiveShadow = true;
-
-        scene.add( mesh );
-
-    } );
-
-    loader.load( './models/ply/binary/Lucy100k.ply', function ( geometry ) {
-
-        geometry.computeVertexNormals();
-
-        const material = new THREE.MeshStandardMaterial( { color: 0x009cff, flatShading: true } );
-        const mesh = new THREE.Mesh( geometry, material );
-
-        mesh.position.x = - 0.2;
-        mesh.position.y = - 0.02;
-        mesh.position.z = - 0.2;
-        mesh.scale.multiplyScalar( 0.0006 );
+        mesh.scale.multiplyScalar( 0.1 );
 
         mesh.castShadow = true;
         mesh.receiveShadow = true;
@@ -97,6 +84,9 @@ function init() {
     renderer.shadowMap.enabled = true;
 
     container.appendChild( renderer.domElement );
+
+    let controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
 
     // stats
 
@@ -148,6 +138,7 @@ function animate() {
 
     render();
     stats.update();
+    // controls.update();
 
 }
 
@@ -155,8 +146,8 @@ function render() {
 
     const timer = Date.now() * 0.0005;
 
-    camera.position.x = Math.sin( timer ) * 2.5;
-    camera.position.z = Math.cos( timer ) * 2.5;
+    // camera.position.x = Math.sin( timer ) * 2.5;
+    // camera.position.z = Math.cos( timer ) * 2.5;
 
     camera.lookAt( cameraTarget );
 
