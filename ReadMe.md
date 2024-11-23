@@ -3,7 +3,7 @@
 Playing around with gaussian splatting, using luma.ai and polycam.
 ___
 
-### https://flokleiser.github.io/gaussianFlo/
+### (https://flokleiser.github.io/gaussian-splatting/)
 ___
 
 # References & Links
